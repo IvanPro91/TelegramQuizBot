@@ -1,0 +1,48 @@
+{% extends 'content.html' %}
+
+{% block auth %}
+    <div class="page page-center">
+      <div class="container container-tight py-4">
+        <form class="card card-md" action="{% url 'users:verification_code' %}" method="post" autocomplete="off" novalidate="">
+          {% csrf_token %}
+          <div class="card-body">
+            <h2 class="card-title card-title-lg text-center mb-4">Активация учетной записи</h2>
+            <p class="my-4 text-center">Пожалуйста, введите код отправленный нам на почту.</p>
+            {% include 'alert_message.html' %}
+            <div class="my-5">
+              <div class="row g-4">
+                <div class="col">
+                  <div class="row g-2">
+                    <div class="col">
+                      <input type="text" name="num_0" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="num_1" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="num_2" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="num_3" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="num_4" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="num_5" class="form-control form-control-lg text-center px-3 py-3" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-code-input="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-footer">
+              <div class="btn-list flex-nowrap">
+                <a href="{% url 'users:login' %}" class="btn btn-3 w-100"> Отменить </a>
+                <button type="submit" class="btn btn-primary btn-3 w-100"> Активировать </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock %}

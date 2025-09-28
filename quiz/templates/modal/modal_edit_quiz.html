@@ -1,0 +1,88 @@
+<div class="modal-header">
+    <h5 class="modal-title">Редактирование викторины</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form id="quiz-form">
+    <div class="modal-body">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Вопрос викторины</label>
+            {{ form.quest }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ответы викторины</label>
+            <div class="row col-12">
+                <div class="col-md-8 col-xl-8">
+                    <input type="text" class="form-control" id="current_answer" placeholder="Введите вариант ответа">
+                </div>
+                <div class="col-md-4 col-xl-4">
+                    <a class="btn btn-primary ms-auto" id="btn_add_answer_to_list">Добавить в список</a>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Список ответов(выберите правильный)</label>
+            <div id="list-answers">
+                {% for answer in get_all_answers %}
+                    <label class="form-check">
+                        <input class="form-check-input answer" label_text="{{ answer.name }}" type="radio" name="radios" {% if answer.right_answer %}checked{% endif %}>
+                        <span class="form-check-label">{{ answer.name }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="mb-5">
+            <label class="form-label">Подсказка</label>
+            {{ form.hint }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn me-auto" data-bs-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Сохранить</button>
+    </div>
+</form>
+
+<script>
+    $("#btn_add_answer_to_list").click(function(){
+        let text_answer = $("#current_answer").val()
+
+        $("#list-answers").prepend(`
+             <label class="form-check">
+              <input class="form-check-input answer" label_text="${text_answer}" type="radio" name="radios">
+              <span class="form-check-label">${text_answer}</span>
+            </label>
+        `)
+    })
+
+    function collectFormData() {
+        const formData = new FormData(document.getElementById('quiz-form'));
+        const answers = [];
+        $(".answer").each(function(i, e){
+            let element = $(e)
+            answers.push({"name": element.attr("label_text"), "right_answer": element.prop("checked")})
+        })
+        formData.append('answers', JSON.stringify(answers));
+        return formData;
+    }
+
+    $("#quiz-form").on("submit", function(e){
+        e.preventDefault();
+        $.ajax({
+                url: '{% url 'quiz:edit_quiz' quiz.pk %}',
+                type: 'POST',
+                data: collectFormData(),
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRFToken': $('[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX Error:', error);
+                }
+            });
+    })
+
+</script>

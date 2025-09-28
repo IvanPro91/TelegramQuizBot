@@ -1,0 +1,1532 @@
+[
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 21,
+    "fields": {
+      "user": 1,
+      "quest": "Какой тип исключения возникает при делении на ноль в Python?",
+      "hint": "Это арифметическая ошибка, связанная с недопустимой операцией.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 22,
+    "fields": {
+      "user": 1,
+      "quest": "Что делает оператор *args в определении функции?",
+      "hint": "Он позволяет передавать переменное количество позиционных аргументов.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 23,
+    "fields": {
+      "user": 1,
+      "quest": "Какой метод используется для объединения двух множеств в Python?",
+      "hint": "Результат содержит все уникальные элементы из обоих множеств.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 24,
+    "fields": {
+      "user": 1,
+      "quest": "Что вернёт выражение: 'hello'.capitalize()?",
+      "hint": "Этот метод изменяет регистр первой буквы строки.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 25,
+    "fields": {
+      "user": 1,
+      "quest": "Какой модуль нужно импортировать для генерации случайных чисел?",
+      "hint": "Один из самых часто используемых стандартных модулей.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 26,
+    "fields": {
+      "user": 1,
+      "quest": "Что такое генератор в Python?",
+      "hint": "Это объект, который лениво выдаёт значения по одному.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 27,
+    "fields": {
+      "user": 1,
+      "quest": "Какой метод открывает файл для чтения и записи?",
+      "hint": "Режим доступа включает обе операции.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 28,
+    "fields": {
+      "user": 1,
+      "quest": "Что выведет код: print(2 ** 3 ** 2)?",
+      "hint": "Возведение в степень правоассоциативно в Python.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 29,
+    "fields": {
+      "user": 1,
+      "quest": "Как проверить, является ли объект экземпляром определённого класса?",
+      "hint": "Встроенная функция для проверки типа объекта.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 30,
+    "fields": {
+      "user": 1,
+      "quest": "Что делает конструкция if __name__ == '__main__':?",
+      "hint": "Она позволяет запускать код только при прямом запуске файла.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 92,
+    "fields": {
+      "name": "ZeroDivisionError",
+      "quiz": 21,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 93,
+    "fields": {
+      "name": "ValueError",
+      "quiz": 21,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 94,
+    "fields": {
+      "name": "TypeError",
+      "quiz": 21,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 95,
+    "fields": {
+      "name": "ArithmeticError",
+      "quiz": 21,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 96,
+    "fields": {
+      "name": "Создаёт генератор.",
+      "quiz": 22,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 97,
+    "fields": {
+      "name": "Позволяет передавать неограниченное число позиционных аргументов.",
+      "quiz": 22,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 98,
+    "fields": {
+      "name": "Распаковывает словарь.",
+      "quiz": 22,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 99,
+    "fields": {
+      "name": "Умножает все аргументы на заданное число.",
+      "quiz": 22,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 100,
+    "fields": {
+      "name": "merge()",
+      "quiz": 23,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 101,
+    "fields": {
+      "name": "combine()",
+      "quiz": 23,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 102,
+    "fields": {
+      "name": "union()",
+      "quiz": 23,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 103,
+    "fields": {
+      "name": "join()",
+      "quiz": 23,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 104,
+    "fields": {
+      "name": "HELLO",
+      "quiz": 24,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 105,
+    "fields": {
+      "name": "Hello",
+      "quiz": 24,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 106,
+    "fields": {
+      "name": "hello",
+      "quiz": 24,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 107,
+    "fields": {
+      "name": "hELLO",
+      "quiz": 24,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 108,
+    "fields": {
+      "name": "math",
+      "quiz": 25,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 109,
+    "fields": {
+      "name": "random",
+      "quiz": 25,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 110,
+    "fields": {
+      "name": "numpy",
+      "quiz": 25,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 111,
+    "fields": {
+      "name": "os",
+      "quiz": 25,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 112,
+    "fields": {
+      "name": "Функция, возвращающая список всех значений сразу.",
+      "quiz": 26,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 113,
+    "fields": {
+      "name": "Объект, который можно итерировать и который выдаёт значения по одному.",
+      "quiz": 26,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 114,
+    "fields": {
+      "name": "Специальный тип цикла.",
+      "quiz": 26,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 115,
+    "fields": {
+      "name": "Декоратор для ускорения функций.",
+      "quiz": 26,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 116,
+    "fields": {
+      "name": "'r'",
+      "quiz": 27,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 117,
+    "fields": {
+      "name": "'w'",
+      "quiz": 27,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 118,
+    "fields": {
+      "name": "'r+'",
+      "quiz": 27,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 119,
+    "fields": {
+      "name": "'a'",
+      "quiz": 27,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 120,
+    "fields": {
+      "name": "64",
+      "quiz": 28,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 121,
+    "fields": {
+      "name": "512",
+      "quiz": 28,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 122,
+    "fields": {
+      "name": "729",
+      "quiz": 28,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 123,
+    "fields": {
+      "name": "12",
+      "quiz": 28,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 124,
+    "fields": {
+      "name": "type(obj) == MyClass",
+      "quiz": 29,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 125,
+    "fields": {
+      "name": "isinstance(obj, MyClass)",
+      "quiz": 29,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 126,
+    "fields": {
+      "name": "obj.is(MyClass)",
+      "quiz": 29,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 127,
+    "fields": {
+      "name": "hasattr(obj, '__class__')",
+      "quiz": 29,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 128,
+    "fields": {
+      "name": "Проверяет, запущен ли скрипт напрямую, а не импортирован как модуль.",
+      "quiz": 30,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 129,
+    "fields": {
+      "name": "Запускает программу в режиме отладки.",
+      "quiz": 30,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 130,
+    "fields": {
+      "name": "Определяет точку входа в многопоточном приложении.",
+      "quiz": 30,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 131,
+    "fields": {
+      "name": "Импортирует все функции из модуля.",
+      "quiz": 30,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 101,
+    "fields": {
+      "user": 40,
+      "quest": "Какой тип данных в Python неизменяем?",
+      "hint": "Изменяемые объекты можно менять после создания, неизменяемые — нет.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 401,
+    "fields": {
+      "name": "list",
+      "quiz": 101,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 402,
+    "fields": {
+      "name": "dict",
+      "quiz": 101,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 403,
+    "fields": {
+      "name": "set",
+      "quiz": 101,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 404,
+    "fields": {
+      "name": "tuple",
+      "quiz": 101,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 102,
+    "fields": {
+      "user": 40,
+      "quest": "Что делает функция range(5)?",
+      "hint": "Генерирует последовательность целых чисел.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 405,
+    "fields": {
+      "name": "Создаёт список [0, 1, 2, 3, 4]",
+      "quiz": 102,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 406,
+    "fields": {
+      "name": "Создаёт список [1, 2, 3, 4, 5]",
+      "quiz": 102,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 407,
+    "fields": {
+      "name": "Возвращает 5",
+      "quiz": 102,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 408,
+    "fields": {
+      "name": "Создаёт генератор чисел от 1 до 5",
+      "quiz": 102,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 103,
+    "fields": {
+      "user": 40,
+      "quest": "Какой модуль используется для работы с датой и временем?",
+      "hint": "Стандартный модуль Python для временных меток.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 409,
+    "fields": {
+      "name": "time",
+      "quiz": 103,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 410,
+    "fields": {
+      "name": "datetime",
+      "quiz": 103,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 411,
+    "fields": {
+      "name": "calendar",
+      "quiz": 103,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 412,
+    "fields": {
+      "name": "date",
+      "quiz": 103,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 104,
+    "fields": {
+      "user": 40,
+      "quest": "Что вернёт выражение: 'a' in 'abc'?",
+      "hint": "Оператор in проверяет наличие подстроки.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 413,
+    "fields": {
+      "name": "True",
+      "quiz": 104,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 414,
+    "fields": {
+      "name": "False",
+      "quiz": 104,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 415,
+    "fields": {
+      "name": "1",
+      "quiz": 104,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 416,
+    "fields": {
+      "name": "0",
+      "quiz": 104,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 105,
+    "fields": {
+      "user": 40,
+      "quest": "Какой метод списка возвращает индекс первого вхождения элемента?",
+      "hint": "Вызывает ValueError, если элемент не найден.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 417,
+    "fields": {
+      "name": "find()",
+      "quiz": 105,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 418,
+    "fields": {
+      "name": "index()",
+      "quiz": 105,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 419,
+    "fields": {
+      "name": "search()",
+      "quiz": 105,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 420,
+    "fields": {
+      "name": "locate()",
+      "quiz": 105,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 106,
+    "fields": {
+      "user": 40,
+      "quest": "Что такое f-строки в Python?",
+      "hint": "Современный способ форматирования строк с переменными.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 421,
+    "fields": {
+      "name": "Строки, начинающиеся с 'f', позволяющие встраивать выражения.",
+      "quiz": 106,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 422,
+    "fields": {
+      "name": "Форматированные файлы с расширением .f",
+      "quiz": 106,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 423,
+    "fields": {
+      "name": "Функция для чтения файлов",
+      "quiz": 106,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 424,
+    "fields": {
+      "name": "Специальный тип данных для дробей",
+      "quiz": 106,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 107,
+    "fields": {
+      "user": 40,
+      "quest": "Какой результат у выражения: 3 + 4 * 2?",
+      "hint": "Умножение имеет более высокий приоритет, чем сложение.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 425,
+    "fields": {
+      "name": "14",
+      "quiz": 107,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 426,
+    "fields": {
+      "name": "11",
+      "quiz": 107,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 427,
+    "fields": {
+      "name": "10",
+      "quiz": 107,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 428,
+    "fields": {
+      "name": "21",
+      "quiz": 107,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 108,
+    "fields": {
+      "user": 40,
+      "quest": "Какой тип данных возвращает input()?",
+      "hint": "Всегда возвращает строку, даже если введено число.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 429,
+    "fields": {
+      "name": "int",
+      "quiz": 108,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 430,
+    "fields": {
+      "name": "str",
+      "quiz": 108,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 431,
+    "fields": {
+      "name": "float",
+      "quiz": 108,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 432,
+    "fields": {
+      "name": "bool",
+      "quiz": 108,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 109,
+    "fields": {
+      "user": 40,
+      "quest": "Что делает оператор is в Python?",
+      "hint": "Проверяет, ссылаются ли две переменные на один и тот же объект в памяти.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 433,
+    "fields": {
+      "name": "Проверяет равенство значений",
+      "quiz": 109,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 434,
+    "fields": {
+      "name": "Проверяет идентичность объектов (один и тот же объект в памяти)",
+      "quiz": 109,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 435,
+    "fields": {
+      "name": "Присваивает значение",
+      "quiz": 109,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 436,
+    "fields": {
+      "name": "Импортирует модуль",
+      "quiz": 109,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 110,
+    "fields": {
+      "user": 40,
+      "quest": "Какой метод удаляет последний элемент списка и возвращает его?",
+      "hint": "Метод изменяет исходный список.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 437,
+    "fields": {
+      "name": "remove()",
+      "quiz": 110,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 438,
+    "fields": {
+      "name": "pop()",
+      "quiz": 110,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 439,
+    "fields": {
+      "name": "delete()",
+      "quiz": 110,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 440,
+    "fields": {
+      "name": "last()",
+      "quiz": 110,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 111,
+    "fields": {
+      "user": 41,
+      "quest": "Какой модуль используется для сериализации объектов в JSON?",
+      "hint": "Стандартный модуль Python для работы с JSON.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 441,
+    "fields": {
+      "name": "json",
+      "quiz": 111,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 442,
+    "fields": {
+      "name": "pickle",
+      "quiz": 111,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 443,
+    "fields": {
+      "name": "xml",
+      "quiz": 111,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 444,
+    "fields": {
+      "name": "yaml",
+      "quiz": 111,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 112,
+    "fields": {
+      "user": 41,
+      "quest": "Что делает функция sorted()?",
+      "hint": "Возвращает новый отсортированный список, не изменяя исходный.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 445,
+    "fields": {
+      "name": "Сортирует список на месте",
+      "quiz": 112,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 446,
+    "fields": {
+      "name": "Возвращает новый отсортированный список",
+      "quiz": 112,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 447,
+    "fields": {
+      "name": "Переворачивает список",
+      "quiz": 112,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 448,
+    "fields": {
+      "name": "Удаляет дубликаты",
+      "quiz": 112,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 113,
+    "fields": {
+      "user": 41,
+      "quest": "Какой символ используется для однострочного комментария?",
+      "hint": "Всё после этого символа игнорируется интерпретатором.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 449,
+    "fields": {
+      "name": "//",
+      "quiz": 113,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 450,
+    "fields": {
+      "name": "#",
+      "quiz": 113,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 451,
+    "fields": {
+      "name": "/*",
+      "quiz": 113,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 452,
+    "fields": {
+      "name": "--",
+      "quiz": 113,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 114,
+    "fields": {
+      "user": 41,
+      "quest": "Что такое lambda в Python?",
+      "hint": "Анонимная функция, обычно используемая для кратких операций.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 453,
+    "fields": {
+      "name": "Ключевое слово для циклов",
+      "quiz": 114,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 454,
+    "fields": {
+      "name": "Анонимная функция",
+      "quiz": 114,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 455,
+    "fields": {
+      "name": "Тип данных для хранения функций",
+      "quiz": 114,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 456,
+    "fields": {
+      "name": "Модуль для математических вычислений",
+      "quiz": 114,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 115,
+    "fields": {
+      "user": 41,
+      "quest": "Какой метод преобразует строку в нижний регистр?",
+      "hint": "Часто используется для нормализации текста.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 457,
+    "fields": {
+      "name": "lower()",
+      "quiz": 115,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 458,
+    "fields": {
+      "name": "tolower()",
+      "quiz": 115,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 459,
+    "fields": {
+      "name": "casefold()",
+      "quiz": 115,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 460,
+    "fields": {
+      "name": "small()",
+      "quiz": 115,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 116,
+    "fields": {
+      "user": 41,
+      "quest": "Что делает оператор ** в Python?",
+      "hint": "Используется для возведения в степень.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 461,
+    "fields": {
+      "name": "Умножение",
+      "quiz": 116,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 462,
+    "fields": {
+      "name": "Возведение в степень",
+      "quiz": 116,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 463,
+    "fields": {
+      "name": "Распаковка словаря",
+      "quiz": 116,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 464,
+    "fields": {
+      "name": "Комментарий",
+      "quiz": 116,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 117,
+    "fields": {
+      "user": 41,
+      "quest": "Какой тип данных используется для хранения пар 'ключ-значение'?",
+      "hint": "Аналог ассоциативного массива или хеш-таблицы.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 465,
+    "fields": {
+      "name": "list",
+      "quiz": 117,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 466,
+    "fields": {
+      "name": "tuple",
+      "quiz": 117,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 467,
+    "fields": {
+      "name": "dict",
+      "quiz": 117,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 468,
+    "fields": {
+      "name": "set",
+      "quiz": 117,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 118,
+    "fields": {
+      "user": 41,
+      "quest": "Что вернёт len('Python')?",
+      "hint": "Функция len() возвращает количество символов в строке.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 469,
+    "fields": {
+      "name": "5",
+      "quiz": 118,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 470,
+    "fields": {
+      "name": "6",
+      "quiz": 118,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 471,
+    "fields": {
+      "name": "7",
+      "quiz": 118,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 472,
+    "fields": {
+      "name": "0",
+      "quiz": 118,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 119,
+    "fields": {
+      "user": 41,
+      "quest": "Какой метод проверяет, начинается ли строка с указанной подстроки?",
+      "hint": "Возвращает True или False.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 473,
+    "fields": {
+      "name": "startswith()",
+      "quiz": 119,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 474,
+    "fields": {
+      "name": "beginwith()",
+      "quiz": 119,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 475,
+    "fields": {
+      "name": "prefix()",
+      "quiz": 119,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 476,
+    "fields": {
+      "name": "first()",
+      "quiz": 119,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.telegramquiz",
+    "pk": 120,
+    "fields": {
+      "user": 41,
+      "quest": "Что такое None в Python?",
+      "hint": "Это специальное значение, обозначающее отсутствие значения.",
+      "count_current_answer": 0,
+      "count_wrong_answer": 0,
+      "count_view_answer": 0,
+      "feedback_wrong": 0,
+      "feedback_like": 0,
+      "feedback_dislike": 0
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 477,
+    "fields": {
+      "name": "Число 0",
+      "quiz": 120,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 478,
+    "fields": {
+      "name": "Пустая строка",
+      "quiz": 120,
+      "right_answer": false
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 479,
+    "fields": {
+      "name": "Специальное значение, обозначающее 'ничего'",
+      "quiz": 120,
+      "right_answer": true
+    }
+  },
+  {
+    "model": "quiz.answersquiz",
+    "pk": 480,
+    "fields": {
+      "name": "Логическое False",
+      "quiz": 120,
+      "right_answer": false
+    }
+  }
+]

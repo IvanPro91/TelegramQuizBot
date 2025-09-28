@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш код подтверждения</title>
+    <style>
+        /* Стили, встроенные из Tabler CSS */
+        :root {
+            --tblr-body-font-family: "Inter Var", Inter, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+            --tblr-body-font-size: 0.875rem;
+            --tblr-body-line-height: 1.4285714286;
+            --tblr-body-color: #552937;
+            --tblr-body-bg: #f9fafb;
+            --tblr-border-color: #e5e7eb;
+            --tblr-border-radius: 6px;
+            --tblr-border-radius-lg: 8px;
+            --tblr-primary: #5553eb; /* Заменяем на более элегантный индиго */
+            --tblr-primary-fg: #ffffff;
+            --tblr-bg-surface: #ffffff;
+            --tblr-bg-surface-secondary: #f3f4f6;
+            --tblr-font-weight-medium: 500;
+            --tblr-font-weight-bold: 600;
+            --tblr-page-padding: 1rem;
+            --tblr-shadow-card: 0 0 4px rgba(31, 41, 55, 0.04);
+            --tblr-link-color: #5553eb; /* Согласуем ссылки с новым акцентом */
+            --tblr-link-hover-color: #3651c2;
+            --tblr-font-size-h2: 1.25rem;
+            --tblr-line-height-h2: 1.75rem;
+            --tblr-font-size-h3: 1rem;
+            --tblr-line-height-h3: 1.5rem;
+            --tblr-font-size-h4: 0.875rem;
+            --tblr-line-height-h4: 1.25rem;
+        }
+
+        body {
+            font-family: var(--tblr-body-font-family);
+            font-size: var(--tblr-body-font-size);
+            line-height: var(--tblr-body-line-height);
+            color: var(--tblr-body-color);
+            background-color: var(--tblr-body-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--tblr-page-padding);
+        }
+
+        .card {
+            background-color: var(--tblr-bg-surface);
+            border: 1px solid var(--tblr-border-color);
+            border-radius: var(--tblr-border-radius-lg);
+            box-shadow: var(--tblr-shadow-card);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, #422aaa 0%, #3651c2 100%); /* Градиентный заголовок */
+            color: var(--tblr-primary-fg);
+            font-weight: var(--tblr-font-weight-bold);
+            font-size: var(--tblr-font-size-h3);
+            line-height: var(--tblr-line-height-h3);
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .h2, h2 {
+            font-size: var(--tblr-font-size-h2);
+            line-height: var(--tblr-line-height-h2);
+            font-weight: var(--tblr-font-weight-bold);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: inherit;
+        }
+
+        .h4, h4 {
+            font-size: var(--tblr-font-size-h4);
+            line-height: var(--tblr-line-height-h4);
+            font-weight: var(--tblr-font-weight-medium);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            font-size: 2.25rem;
+            font-weight: var(--tblr-font-weight-bold);
+            letter-spacing: 0.85rem;
+            color: #4263eb;
+            background-color: rgba(66, 99, 235, 0.05); /* Очень светлый полупрозрачный фон */
+            border: 3px dashed #4263eb;
+            border-radius: var(--tblr-border-radius);
+            text-align: center;
+            margin: 1.5rem 0;
+            font-family: var(--tblr-body-font-family);
+            box-shadow: 0 2px 8px rgba(66, 99, 235, 0.1); /* Добавляем легкую тень */
+        }
+
+        .text-muted {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        a {
+            color: var(--tblr-link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--tblr-link-hover-color);
+            text-decoration: underline;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: var(--tblr-font-weight-medium);
+            color: var(--tblr-primary-fg);
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: var(--tblr-primary);
+            border: 1px solid var(--tblr-primary);
+            padding: 0.5625rem 1rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            border-radius: var(--tblr-border-radius);
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #3651c2;
+            border-color: #3651c2;
+            color: var(--tblr-primary-fg);
+        }
+
+        .alert {
+            --tblr-alert-color: var(--tblr-primary);
+            --tblr-alert-bg: color-mix(in srgb, var(--tblr-alert-color) 5%, transparent);
+            --tblr-alert-border-color: color-mix(in srgb, var(--tblr-alert-color) 15%, transparent);
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            background-color: color-mix(in srgb,var(--tblr-alert-bg),var(--tblr-bg-surface));
+            border-radius: var(--tblr-border-radius);
+            border: var(--tblr-border-width) var(--tblr-border-style) var(--tblr-alert-border-color);
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--tblr-alert-color);
+        }
+
+        .alert-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--tblr-alert-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                🔐 Подтверждение учетной записи
+            </div>
+            <div class="card-body">
+                <h2>Здравствуйте!</h2>
+                <p>Вы запросили одноразовый код для входа или подтверждения действия.</p>
+
+                <div class="text-center">
+                    <div class="code-block">
+                        {{ code }}
+                    </div>
+                </div>
+
+                <div class="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="alert-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                        <path d="M12 8v4"></path>
+                        <path d="M12 16h.01"></path>
+                    </svg>
+                    <div>
+                        <strong>Важно!</strong> Если вы не запрашивали этот код, просто проигнорируйте это письмо. Ваш аккаунт останется в безопасности.
+                    </div>
+                </div>
+
+                <h4>Как использовать код?</h4>
+                <p>Скопируйте 6-значный код выше и вставьте его в соответствующее поле на сайте.</p>
+
+                <p class="text-muted text-center mt-4">
+                    С уважением,<br>
+                    Команда поддержки service-quize-bot@yandex.ru
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

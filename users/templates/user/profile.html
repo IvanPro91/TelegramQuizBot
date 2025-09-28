@@ -1,0 +1,63 @@
+{% extends 'content.html' %}
+
+{% block content %}
+{% load photo %}
+<div class="container">
+    <div class="page-header d-print-none mt-5 mb-5" aria-label="Page header">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">Профиль</div>
+                <h2 class="page-title">Просмотр и изменение профиля</h2>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="card-body">
+            {% csrf_token %}
+            <div class="row align-items-center">
+
+                <div class="col-auto"><span class="avatar avatar-xl"
+                                            style="background-image: url({{ user.avatar|photo_tag }})"> </span></div>
+                <div class="col-auto">
+                    {{ form.avatar }}
+                </div>
+            </div>
+            <h3 class="card-title mt-4">Общая информация профиля</h3>
+            <div class="row g-2">
+                <h3 class="card-title mt-4">Имя</h3>
+                <p class="card-subtitle">Введите имя пользователя отображаемое для пользователей</p>
+                <div>
+                    <div class="col-auto">
+                        {{ form.first_name }}
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <h3 class="card-title mt-4">Фамилия</h3>
+                <p class="card-subtitle">Введите фамилию пользователя.</p>
+                <div>
+                    <div class="col-auto">
+                       {{ form.last_name }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-2">
+                 <h3 class="card-title mt-4">Email</h3>
+                <p class="card-subtitle">Почта предоставляется не для редактирования.</p>
+                 <div>
+                    <div class="col-auto">
+                        {{ form.email }}
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent mt-5" style="margin-bottom: 150px;">
+                <div class="btn-list justify-content-end">
+                  <button type="submit" class="btn btn-primary btn-2"> Сохранить </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

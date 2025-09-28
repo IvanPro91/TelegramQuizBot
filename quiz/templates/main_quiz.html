@@ -1,0 +1,166 @@
+{% extends 'content.html' %}
+
+{% block content %}
+
+<div class="row g-2 align-items-center">
+    <div class="col">
+        <div class="page-pretitle">Викторины</div>
+        <h2 class="page-title">Список созданных викторин</h2>
+    </div>
+    <div class="col-auto ms-auto d-print-none">
+        <div class="btn-list">
+            <a id="btn-add-quiz" class="btn btn-primary btn-5 d-none d-sm-inline-block cursor-pointer"
+               data-bs-toggle="modal"
+               data-bs-target="#modal-report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="icon icon-2">
+                    <path d="M12 5l0 14"></path>
+                    <path d="M5 12l14 0"></path>
+                </svg>
+                Создать викторину
+            </a>
+            <a href="#" class="btn btn-primary btn-6 d-sm-none btn-icon" data-bs-toggle="modal"
+               data-bs-target="#modal-report" aria-label="Create new report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="icon icon-2">
+                    <path d="M12 5l0 14"></path>
+                    <path d="M5 12l14 0"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page-body">
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-vcenter card-table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Вопрос</th>
+                    <th>Ответы</th>
+                    <th>Подсказка</th>
+                    <th class="w-1"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for quiz in list_quiz %}
+                <tr>
+                    <td>{{ quiz.pk }}</td>
+                    <td class="text-secondary">{{ quiz.quest }}</td>
+                    <td class="text-secondary">
+                        <div>
+                            {% for answer in quiz.answers.all %}
+                            <label class="form-check">
+                                <input class="form-check-input" disabled type="radio" name="radios_{{ answer.pk }}" {% if answer.right_answer %} checked {% endif %}>
+                                <span class="form-check-label">{{ answer.name }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </td>
+
+                    <td class="text-secondary">{{ quiz.hint }}</td>
+                    <td>
+                        <div class="btn-list" style="display: block ruby;">
+                        <a class="btn-sm btn-danger btn cursor-pointer delete_quiz" id_quiz="{{ quiz.pk }}">Удалить</a>
+                        <a class="btn-sm btn cursor-pointer edit_quiz" id_quiz="{{ quiz.pk }}">Редактировать</a>
+                            </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+
+
+            {% if is_paginated %}
+            <div class="card-footer">
+                <div class="row g-2 justify-content-center justify-content-sm-between">
+                    <div class="col-auto d-flex align-items-center">
+                    </div>
+                    <div class="col-auto">
+                        <ul class="pagination m-0 ms-auto">
+
+                            {% if page_obj.has_previous %}
+                             <li class="page-item">
+                                <a class="page-link" href="?{% if filter_params %}{{ filter_params }}&{% endif %}page={{ page_obj.previous_page_number }}" tabindex="-1" aria-disabled="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon icon-1">
+                                        <path d="M15 6l-6 6l6 6"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% if filter_params %}{{ filter_params }}&{% endif %}page={{ page_obj.next_page_number }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon icon-1">
+                                        <path d="M9 6l6 6l-6 6"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".delete_quiz").click(function(){
+        let id_quiz = $(this).attr("id_quiz")
+        $.ajax({
+            url: location.origin + "/quiz/delete_quiz/" + id_quiz,
+            method: 'get',
+            dataType: "html",
+            success: function(data){
+                 $("#quiz-modal-content").html(data)
+                $("#modal-add-quiz").modal("show");
+            },
+            error: function (jqXHR, exception) {
+                alert('Uncaught Error. ' + jqXHR.responseText);
+            }
+        });
+    })
+
+    $(".edit_quiz").click(function(){
+        let id_quiz = $(this).attr("id_quiz")
+        $.ajax({
+            url: location.origin + "/quiz/edit_quiz/" + id_quiz,
+            method: 'get',
+            dataType: "html",
+            success: function(data){
+                $("#quiz-modal-content").html(data)
+                $("#modal-add-quiz").modal("show");
+            },
+            error: function (jqXHR, exception) {
+                alert('Uncaught Error. ' + jqXHR.responseText);
+            }
+        });
+    })
+
+    $("#btn-add-quiz").click(function(){
+        $.ajax({
+            url: location.origin + "{% url 'quiz:create_quiz' %}",
+            method: 'get',
+            dataType: "html",
+            success: function(data){
+                $("#quiz-modal-content").html(data)
+                $("#modal-add-quiz").modal("show");
+            },
+            error: function (jqXHR, exception) {
+                alert('Uncaught Error. ' + jqXHR.responseText);
+            }
+        });
+    })
+</script>
+{% endblock %}
