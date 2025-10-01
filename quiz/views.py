@@ -58,9 +58,7 @@ class QuizUpdateView(LoginRequiredMixin, UpdateView):
                 for answer in answers:
                     name = answer["name"]
                     right_answer = answer["right_answer"]
-                    AnswersQuiz.objects.create(
-                        name=name, quiz=quiz, right_answer=right_answer
-                    )
+                    AnswersQuiz.objects.create(name=name, quiz=quiz, right_answer=right_answer)
         return super().form_valid(form)
 
 
@@ -84,7 +82,5 @@ class QuizCreateView(LoginRequiredMixin, CreateView):
                 for answer in answers:
                     name = answer["name"]
                     right_answer = answer["right_answer"]
-                    AnswersQuiz.objects.create(
-                        name=name, quiz=quiz, right_answer=right_answer
-                    )
+                    AnswersQuiz.objects.create(name=name, quiz=quiz, right_answer=right_answer)
         return super().form_valid(form)

@@ -1,8 +1,7 @@
 from django.urls import path
 
 from users.apps import UsersConfig
-from users.views import (UserProfileUpdateView, user_logout, users_login,
-                         users_registration, verification_code)
+from users.views import UserProfileUpdateView, user_logout, users_login, users_registration, verification_code
 
 app_name = UsersConfig.name
 

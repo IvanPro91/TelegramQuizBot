@@ -1,8 +1,7 @@
 import random
 
 import telebot
-from telebot.types import (CallbackQuery, InlineKeyboardButton,
-                           InlineKeyboardMarkup, Message)
+from telebot.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config.settings import TELEGRAM_BOT_API
 
@@ -13,9 +12,7 @@ bot = telebot.TeleBot(TELEGRAM_BOT_API)
 def handle_poll_answer(poll_answer: telebot.types.PollAnswer):
     from quiz.models import AnswersQuiz, PollUserSending
 
-    poll_user_sending: PollUserSending = PollUserSending.objects.filter(
-        id_quiz=poll_answer.poll_id
-    ).first()
+    poll_user_sending: PollUserSending = PollUserSending.objects.filter(id_quiz=poll_answer.poll_id).first()
     telegram_quiz = poll_user_sending.quiz
 
     telegram_quiz.count_view_answer += 1
@@ -47,13 +44,9 @@ def callback_query(call: CallbackQuery):
     telegram_user = TelegramUser.objects.filter(id_user=call.from_user.id).first()
     find_quiz: TelegramQuiz = TelegramQuiz.objects.filter(pk=id_quiz).first()
     if find_quiz:
-        find_feedback = FeedbackQuiz.objects.filter(
-            quiz=find_quiz, telegram_user=telegram_user
-        ).first()
+        find_feedback = FeedbackQuiz.objects.filter(quiz=find_quiz, telegram_user=telegram_user).first()
         if not find_feedback:
-            FeedbackQuiz.objects.get_or_create(
-                quiz=find_quiz, telegram_user=telegram_user
-            )
+            FeedbackQuiz.objects.get_or_create(quiz=find_quiz, telegram_user=telegram_user)
             if "like_quest_" in call.data:
                 find_quiz.feedback_like += 1
             elif "dislike_quest_" in call.data:
@@ -63,9 +56,7 @@ def callback_query(call: CallbackQuery):
             find_quiz.save()
             bot.answer_callback_query(call.id, "Спасибо за отзыв")
         else:
-            bot.answer_callback_query(
-                call.id, "Вы уже оставляли отзыв по этой викторине!"
-            )
+            bot.answer_callback_query(call.id, "Вы уже оставляли отзыв по этой викторине!")
 
 
 @bot.message_handler(commands=["start", "quiz"])
@@ -103,15 +94,9 @@ def send_random_pool(message):
 
     inline_list = InlineKeyboardMarkup(row_width=2)
     btn_like = InlineKeyboardButton("Лайк", callback_data=f"like_quest_{poll.pk}")
-    btn_dislike = InlineKeyboardButton(
-        "Дизлайк", callback_data=f"dislike_quest_{poll.pk}"
-    )
-    btn_wrong = InlineKeyboardButton(
-        "Некорректный вопрос/ответ", callback_data=f"wrong_quest_{poll.pk}"
-    )
-    next_poll = InlineKeyboardButton(
-        "Следующая викториа", callback_data=f"next_poll_{poll.pk}"
-    )
+    btn_dislike = InlineKeyboardButton("Дизлайк", callback_data=f"dislike_quest_{poll.pk}")
+    btn_wrong = InlineKeyboardButton("Некорректный вопрос/ответ", callback_data=f"wrong_quest_{poll.pk}")
+    next_poll = InlineKeyboardButton("Следующая викториа", callback_data=f"next_poll_{poll.pk}")
     inline_list.add(btn_like, btn_dislike, btn_wrong)
     inline_list.add(next_poll)
 

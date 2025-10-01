@@ -35,9 +35,7 @@ def users_login(request: HttpRequest):
         chk_pwd = find_user.check_password(password) if find_user else False
 
         if not chk_pwd:
-            messages.error(
-                request, "Пользователь не прошел проверку по логину или паролю"
-            )
+            messages.error(request, "Пользователь не прошел проверку по логину или паролю")
             return redirect(reverse("users:login"))
 
         if chk_pwd and not find_user.is_active:
@@ -64,9 +62,7 @@ def users_registration(request: HttpRequest):
 
         is_new_user, user = User.create_user(first_name, last_name, email, password)
         if is_new_user:
-            html_email_template = render_to_string(
-                "email/template_email.html", {"code": user.code}
-            )
+            html_email_template = render_to_string("email/template_email.html", {"code": user.code})
             try:
                 send_mail(
                     subject="Подтверждение аккаунта",
@@ -79,9 +75,7 @@ def users_registration(request: HttpRequest):
             except Exception as err:
                 print(err)
                 user.delete()
-                messages.error(
-                    request, "Произошла непредвиденная ошибка, повторите позже"
-                )
+                messages.error(request, "Произошла непредвиденная ошибка, повторите позже")
                 return redirect(reverse("users:registration"))
 
     return render(request, "registration.html")
