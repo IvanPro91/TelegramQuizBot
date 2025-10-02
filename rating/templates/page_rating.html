@@ -11,7 +11,174 @@
         </div>
     </div>
 
-    тут контент
+    {% if top_users %}
+    <div class="card mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">🏆 ТОП-5 Лучших пользователей</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% for user in top_users %}
+                <div class="col-md-4 mb-3">
+                    <div class="card {% if forloop.first %}border-warning{% else %}border-light{% endif %}">
+                        <div class="card-body text-center">
+                            <div class="position-relative">
+                                {% if forloop.first %}
+                                <span class="position-absolute top-0 start-50 translate-middle badge bg-warning">
+                                            👑
+                                        </span>
+                                {% endif %}
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                                     style="width: 60px; height: 60px;">
+                                            <span class="text-white fw-bold fs-5">
+                                                {% if user.username %}
+                                                    {{ user.username|first|upper }}
+                                                {% else %}
+                                                    U
+                                                {% endif %}
+                                            </span>
+                                </div>
+                                <h6 class="mb-1">
+                                    {% if user.username_user %}
+                                    @{{ user.username_user }}
+                                    {% else %}
+                                    User {{ user.id }}
+                                    {% endif %}
+                                </h6>
+                                <div class="text-success fw-bold fs-5">{{ user.correct_answers }} ✓</div>
+                                <small class="text-muted">
+                                    {{ user.success_rate }}% успеха<br>
+                                    {{ user.total_answers }} ответов
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Основная таблица рейтинга -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">📊 Полный рейтинг пользователей</h5>
+            <span class="badge bg-green text-green-fg">Всего: {{ total_stats.total_users }}</span>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th width="50">#</th>
+                        <th>Пользователь</th>
+                        <th class="text-center">Правильные ответы</th>
+                        <th class="text-center">Всего ответов</th>
+                        <th class="text-center">Процент успеха</th>
+                        <th class="text-center">Уникальные викторины</th>
+                        <th class="text-center">Рейтинг</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in user_ratings %}
+                    <tr>
+                        <td class="fw-bold">
+                            {{ forloop.counter }}
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                         style="width: 40px; height: 40px;">
+                                                    <span class="text-white fw-bold">
+                                                        {% if user.username_user %}
+                                                            {{ user.username_user|first|upper }}
+                                                        {% else %}
+                                                            U
+                                                        {% endif %}
+                                                    </span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <strong class="d-block">
+                                        {% if user.username_user %}
+                                        @{{ user.username_user }}
+                                        {% else %}
+                                        User {{ user.id }}
+                                        {% endif %}
+                                    </strong>
+                                    <small class="text-muted">
+                                        ID: {{ user.id }}
+                                    </small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span class="badge bg-green text-green-fg">{{ user.correct_answers }}</span>
+                        </td>
+                        <td class="text-center">
+                            {{ user.total_answers }}
+                        </td>
+                        <td class="text-center">
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar {% if user.success_rate >= 80 %}bg-success{% elif user.success_rate >= 50 %}bg-warning{% else %}bg-danger{% endif %}"
+                                     role="progressbar"
+                                     style="width: {{ user.success_rate }}%"
+                                     aria-valuenow="{{ user.success_rate }}"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    {{ user.success_rate }}%
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span class="badge bg-cyan text-white">{{ user.unique_quizzes }}</span>
+                        </td>
+                        <td class="text-center">
+                            {% if forloop.counter == 1 %}
+                            <span class="badge bg-yellow text-yellow-fg">👑 Золото</span>
+                            {% elif forloop.counter == 2 %}
+                            <span class="badge bg-cyan text-cyan-fg">🥈 Серебро</span>
+                            {% elif forloop.counter == 3 %}
+                            <span class="badge bg-blue text-blue-fg">🥉 Бронза</span>
+                            {% elif user.success_rate >= 90 %}
+                            <span class="badge bg-teal text-teal-fg">★ Отлично</span>
+                            {% elif user.success_rate >= 70 %}
+                            <span class="badge bg-green text-green-fg">▲ Хорошо</span>
+                            {% elif user.success_rate >= 50 %}
+                            <span class="badge bg-indigo text-indigo-fg">◼ Средне</span>
+                            {% else %}
+                            <span class="badge bg-azure text-azure-fg">● Начинающий</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" class="text-center py-4">
+                            <div class="text-muted">
+                                <i class="fas fa-users fa-3x mb-3"></i>
+                                <p>Пока нет пользователей, ответивших на ваши викторины</p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+<style>
+    .progress {
+        min-width: 100px;
+    }
+    .badge {
+        font-size: 0.8em;
+    }
+    .table td {
+        vertical-align: middle;
+    }
+</style>
 
 {% endblock %}

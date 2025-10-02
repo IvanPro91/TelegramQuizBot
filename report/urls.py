@@ -1,10 +1,10 @@
-from django.shortcuts import render
 from django.urls import path
 
 from report.apps import ReportConfig
+from report.views import UserAnswersReportView
 
 app_name = ReportConfig.name
 
 urlpatterns = [
-    path("", lambda x: render(x, "page_report.html"), name="report"),
+    path("", UserAnswersReportView.as_view(), name="report"),
 ]

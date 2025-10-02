@@ -1,9 +1,14 @@
 {% extends 'content.html' %}
 
 {% block marketing %}
-  <body class="body-marketing body-gradient">
-    <script src="../dist/js/tabler-theme.min.js?1752697820" integrity="sha384-SoDJmj40r6f9Rfxi6Fq+bNS8ofhlZMyxHk9dq9Y8e1M17PZGkBRN/XUpx8swn0i5"></script>
-    <header class="navbar navbar-expand-lg navbar-transparent py-3">
+<style>
+html {
+    scroll-padding-top: 90px;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <body class="body-marketing body-gradient" data-bs-spy="scroll" data-bs-target="#navbarTogglerDemo01" data-bs-offset="70">
+    <header class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top shadow-sm">
       <div class="container">
         <a href=".." aria-label="Tabler" class="navbar-brand navbar-brand-autodark">
           Платформа для проведения викторин в Telegram
@@ -14,19 +19,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <nav class="navbar-nav ms-auto">
             <div class="nav-item">
-              <a class="nav-link active" href="../marketing"><span class="nav-link-title">Главная</span></a>
+              <a class="nav-link" href="#hero"><span class="nav-link-title">Главная</span></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="../marketing/testimonials.html"><span class="nav-link-title">Отзывы</span></a>
+              <a class="nav-link" href="#features"><span class="nav-link-title">Возможности</span></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="../marketing/pricing.html"><span class="nav-link-title">Тарифы</span></a>
+              <a class="nav-link" href="#testimonials"><span class="nav-link-title">Отзывы</span></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="../marketing/about.html"><span class="nav-link-title">О нас</span></a>
+              <a class="nav-link" href="#stats"><span class="nav-link-title">Статистика</span></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="../marketing/text.html"><span class="nav-link-title">Документация</span></a>
+              <a class="nav-link" href="#faq"><span class="nav-link-title">FAQ</span></a>
             </div>
             <div class="nav-item ms-4">
               <a href="{% url 'users:login' %}" class="btn btn-primary">Авторизоваться</a>
@@ -36,27 +41,22 @@
       </div>
     </header>
 
-
-    <section class="section mt-5">
+    <!-- Герой-секция -->
+    <section id="hero" class="section pt-4" style="padding-top: 10rem !important;">
       <div class="container-narrow text-center">
         <h3 class="h1">Создавайте увлекательные викторины в Telegram<br>без технических сложностей</h3>
         <p class="text-secondary">
-          QuizBot Pro - это мощная платформа для создания, запуска и управления викторинами в мессенджере Telegram.
+          QuizBot - это мощная платформа для создания, запуска и управления викторинами в мессенджере Telegram.
           Привлекайте аудиторию, повышайте вовлеченность и достигайте своих целей с помощью интерактивных квизов.
         </p>
         <div class="btn-list justify-content-center mt-6">
-          <a href="#" class="btn btn-primary btn-2"> Начать бесплатно </a>
-          <a href="#" class="btn btn-3">
-            Узнать больше
-            <!-- Download SVG icon from http://tabler.io/icons/icon/chevron-right -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-end icon-2">
-              <path d="M9 6l6 6l-6 6"></path>
-            </svg>
-          </a>
+          <a href="{% url 'users:login' %}" class="btn btn-primary btn-2"> Начать бесплатно </a>
         </div>
       </div>
     </section>
-    <section class="section section-light mt-5">
+
+    <!-- Возможности -->
+    <section id="features" class="section section-light mt-5">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Все необходимое для создания успешных викторин</h2>
@@ -71,7 +71,6 @@
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/tools -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
                         <path d="M14.5 5.5l4 4"></path>
@@ -85,8 +84,8 @@
                   <div class="col">
                     <h3 class="h2 mb-2">Интуитивный конструктор</h3>
                     <p class="text-secondary m-0">
-                      Создавайте викторины за минуты с помощью простого визуального редактора. Добавляйте вопросы,
-                      варианты ответов, настраивайте таймеры и систему подсчета очков без программирования.
+                      Создавайте викторины за минуты с помощью простой формы. Добавляйте вопросы,
+                      варианты ответов без программирования.
                     </p>
                   </div>
                 </div>
@@ -95,7 +94,6 @@
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/brand-bootstrap -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2"></path>
                         <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2"></path>
@@ -104,10 +102,9 @@
                     </div>
                   </div>
                   <div class="col">
-                    <h3 class="h2 mb-2">Глубокая аналитика</h3>
+                    <h3 class="h2 mb-2">Аналитика</h3>
                     <p class="text-secondary m-0">
-                      Отслеживайте результаты участников, анализируйте статистику по каждому вопросу и получайте
-                      детальные отчеты об эффективности ваших викторин. Понимайте свою аудиторию лучше.
+                      Смотрите пользователей своих викторин, получайте обратную связь по викторинам и получайте рейтинг
                     </p>
                   </div>
                 </div>
@@ -116,7 +113,6 @@
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/paint -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path>
                         <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2"></path>
@@ -127,8 +123,8 @@
                   <div class="col">
                     <h3 class="h2 mb-2">Гибкие настройки</h3>
                     <p class="text-secondary m-0">
-                      Настраивайте викторины под свои нужды: ограничение по времени, случайный порядок вопросов,
-                      различные типы вопросов (один ответ, несколько ответов, текстовый ответ), система рейтингов.
+                      Настраивайте викторины под свои нужды: случайный порядок вопросов,
+                      различные типы вопросов (несколько ответов), система рейтингов.
                     </p>
                   </div>
                 </div>
@@ -136,16 +132,16 @@
             </div>
           </div>
           <div class="col-lg-6 mt-3 mt-lg-0">
-            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="500" height="400" viewBox="0 0 500 400" fill="transparent" stroke="var(--tblr-border-color, #b8cef1)" style="width: 100%; height: auto">
-              <rect x=".5" y=".5" width="499" height="399" rx="2"></rect>
-              <line x1="0" y1="0" x2="500" y2="400"></line>
-              <line x1="0" y1="400" x2="500" y2="0"></line>
-            </svg>
+            <picture>
+              <img src="https://cdn.culture.ru/images/1d0a067b-5764-5735-80b5-0c798121828b" alt="" class="img-fluid" width="1040" height="760" loading="lazy">
+            </picture>
           </div>
         </div>
       </div>
     </section>
-    <section class="section mt-5">
+
+    <!-- Отзывы -->
+    <section id="testimonials" class="section mt-5">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Нам доверяют сотни клиентов</h2>
@@ -165,7 +161,8 @@
                       </div>
                     </div>
                     <p>
-                      Использую QuizBot Pro для проверки знаний студентов. Платформа значительно экономит время на проверке тестов
+                      Использую QuizBot для проверки знаний студентов.
+                      Платформа значительно экономит время на проверке тестов
                       и делает процесс обучения более интерактивным. Студенты в восторге!
                     </p>
                   </div>
@@ -192,7 +189,7 @@
                 <a href="#" class="card bg-surface-secondary">
                   <div class="card-body">
                     <div class="row mb-3">
-                      <div class="col-auto"><span class="avatar avatar-md" style="background-image: url(../static/avatars/003m.jpg)"> </span></div>
+                      <div class="col-auto"><span class="avatar avatar-md" style="background-image: url(https://cdn.culture.ru/images/1d0a067b-5764-5735-80b5-0c798121828b)"> </span></div>
                       <div class="col">
                         <h3 class="h3 m-0">Иван Козлов</h3>
                         <div class="text-secondary">Организатор мероприятий</div>
@@ -210,7 +207,9 @@
         </div>
       </div>
     </section>
-    <section class="section section-light mt-5">
+
+    <!-- Статистика -->
+    <section id="stats" class="section section-light mt-5">
       <div class="container">
         <div class="row justify-content-lg-center">
           <div class="col-sm-6 col-lg-3">
@@ -240,32 +239,9 @@
         </div>
       </div>
     </section>
-    <section class="section mt-5">
-      <div class="container">
-        <div class="section-header mb-6">
-          <h2 class="section-title">Подпишитесь на нашу рассылку</h2>
-          <p class="section-description">Получайте новости о новых функциях и лучшие практики проведения викторин</p>
-        </div>
-      </div>
-      <div class="container-tight">
-        <div class="row">
-          <div class="col">
-            <input class="w-100 form-control" placeholder="Ваш Email" type="email">
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">
-              <!-- Download SVG icon from http://tabler.io/icons/icon/mail -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
-                <path d="M3 7l9 6l9 -6"></path>
-              </svg>
-              Подписаться
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section-light mt-5">
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-light mt-5">
       <div class="container">
         <div class="row g-xl-6">
           <div class="col-lg-4">
@@ -280,7 +256,7 @@
                 <div class="h3 mb-1">Нужны ли технические знания для использования платформы?</div>
                 <div class="text-secondary">
                   Нет! Наш конструктор викторин интуитивно понятен и не требует программирования.
-                  Вы сможете создавать викторины за несколько минут с помощью визуального редактора.
+                  Вы сможете создавать викторины за несколько минут с помощью обычной формы.
                 </div>
               </div>
               <div>
@@ -288,155 +264,94 @@
                 <div class="text-secondary">Наша платформа масштабируется под любые нагрузки. Мы поддерживаем викторины
                 с тысячами участников одновременно без потери производительности.</div>
               </div>
-              <div>
-                <div class="h3 mb-1">Можно ли интегрировать викторины с другими системами?</div>
-                <div class="text-secondary">
-                  Да! Мы предоставляем API для интеграции с вашими системами. Также поддерживается
-                  экспорт результатов в CSV и Excel для дальнейшего анализа.
-                </div>
-              </div>
-            </div>
-            <div class="mt-5">
-              <a class="btn" href="#">Читать больше вопросов</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <footer class="footer mt-5">
-      <div class="container">
-        <div class="py-3">
-          <div class="row g-lg-4">
-            <div class="col-lg-7">
-              <div class="row g-lg-4">
-                <div class="col-md">
-                  <div class="subheader mb-3">Наши продукты</div>
-                  <ul class="list-unstyled list-separated gap-2">
-                    <li><a class="link-secondary" href="">Конструктор викторин</a></li>
-                    <li>
-                      <a class="link-secondary" href="">Telegram боты</a>
-                    </li>
-                    <li>
-                      <a class="link-secondary" href="">Аналитика</a>
-                    </li>
-                    <li><a class="link-secondary" href="">Тарифы</a></li>
-                  </ul>
-                </div>
-                <div class="col-md">
-                  <div class="subheader mb-3">Поддержка</div>
-                  <ul class="list-unstyled list-separated gap-2">
-                    <li><a class="link-secondary" href="">Блог</a></li>
-                    <li><a class="link-secondary" href="">Документация</a></li>
-                    <li><a class="link-secondary" href="">Поддержка</a></li>
-                    <li>
-                      <a href="https://status.tabler.io" class="link-secondary" target="_blank" rel="noreferrer">Статус</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md">
-                  <div class="subheader mb-3">QuizBot Pro</div>
-                  <ul class="list-unstyled list-separated gap-2">
-                    <li><a class="link-secondary" href="">О компании</a></li>
-                    <li><a class="link-secondary" href="">Блог</a></li>
-                    <li><a class="link-secondary" href="">Обновления</a></li>
-                    <li>
-                      <a href="https://github.com/tabler/tabler" class="link-secondary" target="_blank" rel="noreferrer">API</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 ml-auto">
-              <div class="text-secondary">
-                QuizBot Pro предоставляет все необходимое для создания увлекательных викторин в Telegram.
-                Начните свое путешествие в мир интерактивного контента и вовлекайте аудиторию по-новому.
-              </div>
-            </div>
-          </div>
-          <div class="row g-lg-4 justify-content-between mt-0 mt-md-2">
-            <div class="col-sm-7 col-md-6 col-lg-4">
-              <h5 class="subheader">Безопасность и надежность</h5>
-              <ul class="list-inline mb-0 mt-3">
-                <li class="list-inline-item">
-                  <a href="#"><span class="payment payment-1 payment-provider-paypal"></span> </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#"><span class="payment payment-1 payment-provider-visa"></span> </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#"><span class="payment payment-1 payment-provider-mastercard"></span> </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#"><span class="payment payment-1 payment-provider-americanexpress"></span> </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-5 col-md-6 col-lg-3 text-sm-end">
-              <h5 class="subheader">Мы в соцсетях</h5>
-              <ul class="list-inline mb-0 mt-3">
-                <li class="list-inline-item">
-                  <a class="btn btn-icon btn-facebook" href="#"><!-- Download SVG icon from http://tabler.io/icons/icon/brand-facebook -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                      <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path></svg></a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn btn-icon btn-instagram" href="#"><!-- Download SVG icon from http://tabler.io/icons/icon/brand-instagram -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                      <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
-                      <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-                      <path d="M16.5 7.5v.01"></path></svg></a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn btn-icon btn-twitter" href="#"><!-- Download SVG icon from http://tabler.io/icons/icon/brand-twitter -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                      <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"></path></svg></a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn btn-icon btn-linkedin" href="#"><!-- Download SVG icon from http://tabler.io/icons/icon/brand-linkedin -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                      <path d="M8 11v5"></path>
-                      <path d="M8 8v.01"></path>
-                      <path d="M12 16v-5"></path>
-                      <path d="M16 16v-3a2 2 0 1 0 -4 0"></path>
-                      <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path></svg></a>
-                </li>
-              </ul>
-            </div>
+
+    <!-- Остальной код футера и настроек остается без изменений -->
+    <footer class="footer mt-5 bg-light">
+  <div class="container">
+    <div class="py-5">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h5 class="mb-3">QuizBot Pro</h5>
+          <p class="text-muted">
+            Учебный проект по созданию платформы для проведения викторин в Telegram.
+            Разрабатывается для изучения веб-технологий и UX/UI дизайна.
+          </p>
+          <div class="mt-3">
+            <a href="https://github.com/IvanPro91" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
           </div>
         </div>
+
+        <div class="col-lg-2">
+          <h6 class="mb-3">Навигация</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#hero" class="text-muted text-decoration-none">Главная</a></li>
+            <li class="mb-2"><a href="#features" class="text-muted text-decoration-none">Возможности</a></li>
+            <li class="mb-2"><a href="#testimonials" class="text-muted text-decoration-none">Отзывы</a></li>
+            <li class="mb-2"><a href="#stats" class="text-muted text-decoration-none">Статистика</a></li>
+            <li class="mb-2"><a href="#faq" class="text-muted text-decoration-none">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h6 class="mb-3">Технологии</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><span class="text-muted">Python Django</span></li>
+            <li class="mb-2"><span class="text-muted">Tabler.IO</span></li>
+            <li class="mb-2"><span class="text-muted">Telegram Bot API</span></li>
+            <li class="mb-2"><span class="text-muted">PostgreSQL</span></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h6 class="mb-3">Контакты</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <span class="text-muted">Email: </span>
+              <a href="mailto:ivan-don4encko@ya.ru" class="text-muted">ivan-don4encko@ya.ru</a>
+            </li>
+            <li class="mb-2">
+              <span class="text-muted">Telegram: </span>
+              <a href="https://t.me/pythonUUID" class="text-muted">@pythonUUID</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </footer>
-    <footer class="footer">
-      <div class="container">
-        <div class="py-3 border-top-light text-center text-lg-start">
-          <div class="row g-lg-4">
-            <div class="col-lg-auto text-lg-end order-lg-last">
-              <div class="row justify-center">
-                <div class="col-auto">©<a href="https://codecalm.net" class="link-secondary" target="_blank" rel="noopener noreferrer">QuizBot Pro 2024</a></div>
-                <div class="col-auto">
-                  <ul class="list-inline list-inline-dots">
-                    <li class="list-inline-item">
-                      <a class="link-secondary" href="/terms-of-service">Условия использования</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="link-secondary" href="/privacy-policy">Политика конфиденциальности</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg">
-              Сделано с
-              <!-- Download SVG icon from http://tabler.io/icons/icon/heart -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-red icon-inline icon-4">
-                <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+    </div>
+  </div>
+
+  <div class="border-top">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="text-muted mb-0">
+            © 2025 QuizBot. Учебный проект. Все права не защищены 😊
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-links">
+            <a href="https://github.com/IvanPro91" class="text-muted me-3" title="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
               </svg>
-              для вашего успеха.
-            </div>
+            </a>
+            <a href="https://t.me/pythonUUID" class="text-muted me-3" title="Telegram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
+
+    <!-- Остальной код настроек остается без изменений -->
     <div class="settings">
       <a href="#" class="btn btn-floating btn-icon btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings" aria-controls="offcanvasSettings" aria-label="Theme Settings">
         <!-- Download SVG icon from http://tabler.io/icons/icon/brush -->
@@ -663,5 +578,15 @@
         </div>
       </form>
     </div>
+
+    <!-- Инициализация ScrollSpy -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+          target: '#navbarTogglerDemo01',
+          offset: 70
+        });
+      });
+    </script>
 </body>
 {% endblock %}

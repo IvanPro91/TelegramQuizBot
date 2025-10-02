@@ -31,9 +31,7 @@ class AnswersQuiz(models.Model):
     """Модель варианта ответа на вопрос викторины, с указанием правильности."""
 
     name = models.CharField(max_length=100)
-    quiz = models.ForeignKey(
-        TelegramQuiz, on_delete=models.CASCADE, related_name="answers"
-    )
+    quiz = models.ForeignKey(TelegramQuiz, on_delete=models.CASCADE, related_name="answers")
     right_answer = models.BooleanField(default=False)
 
     def __str__(self):

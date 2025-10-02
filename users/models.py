@@ -12,7 +12,7 @@ class User(AbstractUser):
     для аутентификации. Позволяет хранить дополнительную информацию о пользователе
     """
 
-    username = None
+    username = models.CharField(max_length=200, null=True, blank=True)
 
     email = models.EmailField(
         unique=True,
@@ -21,28 +21,20 @@ class User(AbstractUser):
         blank=False,
         null=False,
     )
-    created_at = models.DateTimeField(
-        verbose_name="Создание пользователя", auto_now_add=True
-    )
-    avatar = models.ImageField(
-        upload_to="users/avatar", verbose_name="Аватар", null=True, blank=True
-    )
+    created_at = models.DateTimeField(verbose_name="Создание пользователя", auto_now_add=True)
+    avatar = models.ImageField(upload_to="users/avatar", verbose_name="Аватар", null=True, blank=True)
     code = models.IntegerField(verbose_name="Код для подтверждения", default=0)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     @classmethod
-    def create_user(
-        cls, first_name: str, last_name: str, email: str, password: str
-    ) -> tuple[bool, "User"]:
+    def create_user(cls, first_name: str, last_name: str, email: str, password: str) -> tuple[bool, "User"]:
         new_user = False
         user: "User" = cls.objects.filter(email=email).first()
         if not user:
             new_user = True
-            user: "User" = cls.objects.create(
-                first_name=first_name, last_name=last_name, email=email
-            )
+            user: "User" = cls.objects.create(first_name=first_name, last_name=last_name, email=email)
             user.code = random.randint(100000, 999999)
             user.is_active = False
             user.set_password(password)
