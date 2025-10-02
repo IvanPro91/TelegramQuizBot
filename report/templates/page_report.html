@@ -11,7 +11,94 @@
         </div>
     </div>
 
-    тут контент
+    <div class="table-responsive">
+        <table class="table table-vcenter card-table table-striped">
+            <thead>
+            <tr>
+                <th>Пользователь</th>
+                <th>Вопрос викторины</th>
+                <th>Статус ответа</th>
+                <th>Правильные ответы</th>
+                <th>ID викторины</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for answer in user_answers %}
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                 style="width: 40px; height: 40px;">
+                                <span class="text-white fw-bold">
+                                    {{ answer.telegram_user.username_user|first|default:"U" }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <strong class="d-block">
+                                {% if answer.telegram_user.username_user %}
+                                @{{ answer.telegram_user.username_user }}
+                                {% else %}
+                                {{ answer.telegram_user }}
+                                Анонимный пользователь
+                                {% endif %}
+                            </strong>
+                            <small class="text-muted">
+                                ID: {{ answer.telegram_user.id }}
+                            </small>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="fw-bold mb-1" title="{{ answer.quiz.quest }}">
+                        {{ answer.quiz.quest|truncatewords:8 }}
+                    </div>
+                    {% if answer.quiz.hint %}
+                    <small class="text-muted" title="{{ answer.quiz.hint }}">
+                        Подсказка: {{ answer.quiz.hint|truncatewords:4 }}
+                    </small>
+                    {% endif %}
+                </td>
+
+                <td>
+                    {% if answer.current_status %}
+                    <span class="badge bg-green text-green-fg">Правильно</span>
+                    {% else %}
+                    <span class="badge bg-red text-red-fg">Неправильно</span>
+                    {% endif %}
+                </td>
+
+                <td>
+                    {% with correct_answers=answer.quiz.all_answers %}
+                    {% for ans in correct_answers %}
+                    {% if ans.right_answer %}
+                    <span class="badge bg-green text-green-fg">{{ ans.name|truncatewords:4 }}</span>
+                    {% endif %}
+                    {% empty %}
+                    <span class="text-muted">Нет данных</span>
+                    {% endfor %}
+                    {% endwith %}
+                </td>
+
+                <td>
+                    <code>{{ answer.id_quiz|default:"N/A" }}</code>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center py-4">
+                    <div class="text-muted">
+                        <i class="fas fa-inbox fa-3x mb-3"></i>
+                        <p>Пока нет ответов на ваши викторины</p>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 {% endblock %}

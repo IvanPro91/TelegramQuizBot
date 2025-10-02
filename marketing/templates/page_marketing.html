@@ -46,18 +46,11 @@ html {
       <div class="container-narrow text-center">
         <h3 class="h1">Создавайте увлекательные викторины в Telegram<br>без технических сложностей</h3>
         <p class="text-secondary">
-          QuizBot Pro - это мощная платформа для создания, запуска и управления викторинами в мессенджере Telegram.
+          QuizBot - это мощная платформа для создания, запуска и управления викторинами в мессенджере Telegram.
           Привлекайте аудиторию, повышайте вовлеченность и достигайте своих целей с помощью интерактивных квизов.
         </p>
         <div class="btn-list justify-content-center mt-6">
-          <a href="#" class="btn btn-primary btn-2"> Начать бесплатно </a>
-          <a href="#features" class="btn btn-3">
-            Узнать больше
-            <!-- Download SVG icon from http://tabler.io/icons/icon/chevron-right -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-end icon-2">
-              <path d="M9 6l6 6l-6 6"></path>
-            </svg>
-          </a>
+          <a href="{% url 'users:login' %}" class="btn btn-primary btn-2"> Начать бесплатно </a>
         </div>
       </div>
     </section>
@@ -78,7 +71,6 @@ html {
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/tools -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
                         <path d="M14.5 5.5l4 4"></path>
@@ -92,8 +84,8 @@ html {
                   <div class="col">
                     <h3 class="h2 mb-2">Интуитивный конструктор</h3>
                     <p class="text-secondary m-0">
-                      Создавайте викторины за минуты с помощью простого визуального редактора. Добавляйте вопросы,
-                      варианты ответов, настраивайте таймеры и систему подсчета очков без программирования.
+                      Создавайте викторины за минуты с помощью простой формы. Добавляйте вопросы,
+                      варианты ответов без программирования.
                     </p>
                   </div>
                 </div>
@@ -102,7 +94,6 @@ html {
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/brand-bootstrap -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2"></path>
                         <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2"></path>
@@ -111,10 +102,9 @@ html {
                     </div>
                   </div>
                   <div class="col">
-                    <h3 class="h2 mb-2">Глубокая аналитика</h3>
+                    <h3 class="h2 mb-2">Аналитика</h3>
                     <p class="text-secondary m-0">
-                      Отслеживайте результаты участников, анализируйте статистику по каждому вопросу и получайте
-                      детальные отчеты об эффективности ваших викторин. Понимайте свою аудиторию лучше.
+                      Смотрите пользователей своих викторин, получайте обратную связь по викторинам и получайте рейтинг
                     </p>
                   </div>
                 </div>
@@ -123,7 +113,6 @@ html {
                 <div class="row">
                   <div class="col-auto">
                     <div class="shape shape-md">
-                      <!-- Download SVG icon from http://tabler.io/icons/icon/paint -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                         <path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path>
                         <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2"></path>
@@ -134,8 +123,8 @@ html {
                   <div class="col">
                     <h3 class="h2 mb-2">Гибкие настройки</h3>
                     <p class="text-secondary m-0">
-                      Настраивайте викторины под свои нужды: ограничение по времени, случайный порядок вопросов,
-                      различные типы вопросов (один ответ, несколько ответов, текстовый ответ), система рейтингов.
+                      Настраивайте викторины под свои нужды: случайный порядок вопросов,
+                      различные типы вопросов (несколько ответов), система рейтингов.
                     </p>
                   </div>
                 </div>
@@ -172,7 +161,8 @@ html {
                       </div>
                     </div>
                     <p>
-                      Использую QuizBot Pro для проверки знаний студентов. Платформа значительно экономит время на проверке тестов
+                      Использую QuizBot для проверки знаний студентов.
+                      Платформа значительно экономит время на проверке тестов
                       и делает процесс обучения более интерактивным. Студенты в восторге!
                     </p>
                   </div>
@@ -311,10 +301,9 @@ html {
           <h6 class="mb-3">Технологии</h6>
           <ul class="list-unstyled">
             <li class="mb-2"><span class="text-muted">Python Django</span></li>
-            <li class="mb-2"><span class="text-muted">Bootstrap 5</span></li>
+            <li class="mb-2"><span class="text-muted">Tabler.IO</span></li>
             <li class="mb-2"><span class="text-muted">Telegram Bot API</span></li>
             <li class="mb-2"><span class="text-muted">PostgreSQL</span></li>
-            <li class="mb-2"><span class="text-muted">Redis</span></li>
           </ul>
         </div>
 
